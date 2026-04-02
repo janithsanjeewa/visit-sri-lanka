@@ -37,13 +37,12 @@ const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
-              <span className="text-2xl font-bold text-primary-foreground">V</span>
-            </div>
-            <span className={`text-xl font-bold transition-colors duration-300 ${scrolled ? 'text-secondary' : 'text-white drop-shadow-md'}`} style={{ fontFamily: 'Playfair Display, serif' }}>
-              Visit Sri Lanka
-            </span>
+          <div className="flex items-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <img
+              src="/logo.png"
+              alt="Visit Sri Lanka"
+              className="h-14 w-auto object-contain drop-shadow-md"
+            />
           </div>
 
           <nav className="hidden lg:flex items-center gap-8">
@@ -59,7 +58,7 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:block">
-            <Button 
+            <Button
               onClick={() => scrollToSection('#plan')}
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full px-6 transition-all duration-200 active:scale-[0.98] shadow-lg shadow-primary/20"
             >
@@ -86,7 +85,7 @@ const Header = () => {
                   </button>
                 ))}
                 <div className="pt-6 border-t border-border">
-                  <Button 
+                  <Button
                     onClick={() => scrollToSection('#plan')}
                     className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold w-full rounded-full transition-all duration-200 active:scale-[0.98]"
                   >
