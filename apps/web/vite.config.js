@@ -285,6 +285,7 @@ logger.error = (msg, options) => {
 }
 
 export default defineConfig({
+	base: '/visit-sri-lanka/',
 	optimizeDeps: {
 		include: allDeps,
 	},

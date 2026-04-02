@@ -9,7 +9,8 @@
 		"lint": "concurrently --raw \"npm run lint --prefix apps/web\""
 	},
 	"devDependencies": {
-		"concurrently": "^9.1.2"
+		"concurrently": "^9.1.2",
+		"gh-pages": "^6.3.0"
 	},
 	"workspaces": [
 		"apps/*"
