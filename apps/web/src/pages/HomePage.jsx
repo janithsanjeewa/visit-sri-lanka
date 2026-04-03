@@ -35,22 +35,22 @@ const HomePage = () => {
 
   const activities = [
     {
-      image: 'https://images.unsplash.com/photo-1585380375124-541947be7ac9',
+      image: 'https://duqjpivknq39s.cloudfront.net/2019/03/800x750-48.jpg',
       title: 'Wildlife Safaris',
       description: 'Explore Yala and Udawalawe National Parks to see elephants, leopards, and exotic wildlife.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1677146334364-f15fb16baec1',
+      image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/db/11/30/caption.jpg?w=500&h=400&s=1',
       title: 'Tea Plantation Tours',
       description: 'Visit Nuwara Eliya and learn how world-famous Ceylon tea is produced.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1578052982378-3611ba9b2ee6',
+      image: 'https://www.delmegetours.com/wp-content/uploads/2024/04/man-5462849_1280-1.jpg',
       title: 'Surfing & Diving',
       description: 'Ride the waves in Arugam Bay or explore coral reefs in Hikkaduwa.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1679244867850-5dcd25e4ab91',
+      image: 'https://www.indoasia-tours.com/wp-content/uploads/2021/01/A-statue-of-reclining-Buddha-Dambulla-5.jpg',
       title: 'Ancient Temples',
       description: 'Discover sacred temples and spiritual heritage across the island.'
     }
@@ -99,7 +99,7 @@ const HomePage = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    
+
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.travelDate || !formData.guests) {
       toast.error('Please fill in all required fields');
       return;
@@ -126,7 +126,7 @@ const HomePage = () => {
 
   const handleHotelSearch = (e) => {
     e.preventDefault();
-    
+
     if (!hotelSearch.destination || !hotelSearch.checkIn || !hotelSearch.checkOut || !hotelSearch.guests) {
       toast.error('Please fill in all search fields');
       return;
@@ -148,8 +148,8 @@ const HomePage = () => {
         {/* HERO SECTION */}
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20">
           <div className="absolute inset-0">
-            <img 
-              src="https://horizons-cdn.hostinger.com/3f324f6a-a0b1-471d-a91a-725e994c042b/38da79ef7d4384e7fc63e5e62762c858.jpg" 
+            <img
+              src="https://horizons-cdn.hostinger.com/3f324f6a-a0b1-471d-a91a-725e994c042b/38da79ef7d4384e7fc63e5e62762c858.jpg"
               alt="Aerial view of pristine Sri Lankan beach with turquoise waters and white sand"
               className="w-full h-full object-cover"
             />
@@ -167,16 +167,16 @@ const HomePage = () => {
               <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed text-white/95 drop-shadow-md">
                 From ancient kingdoms and sacred temples to misty tea plantations and golden beaches, Sri Lanka offers a journey unlike anywhere else in the world. Explore culture, adventure, and relaxation in one unforgettable destination.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-                <Button 
+                <Button
                   size="lg"
                   onClick={() => document.querySelector('#destinations').scrollIntoView({ behavior: 'smooth' })}
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-6 rounded-full transition-all duration-200 active:scale-[0.98] shadow-lg shadow-primary/20"
                 >
                   Explore Destinations
                 </Button>
-                <Button 
+                <Button
                   size="lg"
                   variant="outline"
                   onClick={() => document.querySelector('#experiences').scrollIntoView({ behavior: 'smooth' })}
@@ -237,10 +237,10 @@ const HomePage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px] md:auto-rows-[400px]">
               {destinationsList.map((destination, index) => (
-                <DestinationCard 
+                <DestinationCard
                   key={destination.id}
-                  {...destination} 
-                  index={index} 
+                  {...destination}
+                  index={index}
                 />
               ))}
             </div>
@@ -361,7 +361,7 @@ const HomePage = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div className="space-y-3">
                       <Label htmlFor="destination" className="text-sm font-semibold text-secondary">Destination</Label>
-                      <Select value={hotelSearch.destination} onValueChange={(value) => setHotelSearch({...hotelSearch, destination: value})}>
+                      <Select value={hotelSearch.destination} onValueChange={(value) => setHotelSearch({ ...hotelSearch, destination: value })}>
                         <SelectTrigger id="destination" className="text-foreground bg-background border-border h-12 rounded-xl">
                           <SelectValue placeholder="Where to?" />
                         </SelectTrigger>
@@ -375,41 +375,41 @@ const HomePage = () => {
 
                     <div className="space-y-3">
                       <Label htmlFor="checkIn" className="text-sm font-semibold text-secondary">Check-in Date</Label>
-                      <Input 
+                      <Input
                         id="checkIn"
-                        type="date" 
+                        type="date"
                         value={hotelSearch.checkIn}
-                        onChange={(e) => setHotelSearch({...hotelSearch, checkIn: e.target.value})}
+                        onChange={(e) => setHotelSearch({ ...hotelSearch, checkIn: e.target.value })}
                         className="text-foreground bg-background border-border h-12 rounded-xl"
                       />
                     </div>
 
                     <div className="space-y-3">
                       <Label htmlFor="checkOut" className="text-sm font-semibold text-secondary">Check-out Date</Label>
-                      <Input 
+                      <Input
                         id="checkOut"
-                        type="date" 
+                        type="date"
                         value={hotelSearch.checkOut}
-                        onChange={(e) => setHotelSearch({...hotelSearch, checkOut: e.target.value})}
+                        onChange={(e) => setHotelSearch({ ...hotelSearch, checkOut: e.target.value })}
                         className="text-foreground bg-background border-border h-12 rounded-xl"
                       />
                     </div>
 
                     <div className="space-y-3">
                       <Label htmlFor="hotelGuests" className="text-sm font-semibold text-secondary">Guests</Label>
-                      <Input 
+                      <Input
                         id="hotelGuests"
-                        type="number" 
+                        type="number"
                         min="1"
                         placeholder="Number of guests"
                         value={hotelSearch.guests}
-                        onChange={(e) => setHotelSearch({...hotelSearch, guests: e.target.value})}
+                        onChange={(e) => setHotelSearch({ ...hotelSearch, guests: e.target.value })}
                         className="text-foreground bg-background border-border h-12 rounded-xl placeholder:text-muted-foreground"
                       />
                     </div>
                   </div>
 
-                  <Button 
+                  <Button
                     type="submit"
                     className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-14 rounded-xl text-lg transition-all duration-200 active:scale-[0.98] mt-4"
                   >
@@ -443,12 +443,12 @@ const HomePage = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-3">
                       <Label htmlFor="firstName" className="text-sm font-semibold text-secondary">First Name *</Label>
-                      <Input 
+                      <Input
                         id="firstName"
                         type="text"
                         placeholder="Enter your first name"
                         value={formData.firstName}
-                        onChange={(e) => setFormData({...formData, firstName: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                         required
                         className="text-foreground bg-background border-border h-12 rounded-xl placeholder:text-muted-foreground"
                       />
@@ -456,12 +456,12 @@ const HomePage = () => {
 
                     <div className="space-y-3">
                       <Label htmlFor="lastName" className="text-sm font-semibold text-secondary">Last Name *</Label>
-                      <Input 
+                      <Input
                         id="lastName"
                         type="text"
                         placeholder="Enter your last name"
                         value={formData.lastName}
-                        onChange={(e) => setFormData({...formData, lastName: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                         required
                         className="text-foreground bg-background border-border h-12 rounded-xl placeholder:text-muted-foreground"
                       />
@@ -470,12 +470,12 @@ const HomePage = () => {
 
                   <div className="space-y-3">
                     <Label htmlFor="email" className="text-sm font-semibold text-secondary">Email *</Label>
-                    <Input 
+                    <Input
                       id="email"
                       type="email"
                       placeholder="your.email@example.com"
                       value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
                       className="text-foreground bg-background border-border h-12 rounded-xl placeholder:text-muted-foreground"
                     />
@@ -484,11 +484,11 @@ const HomePage = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-3">
                       <Label htmlFor="travelDate" className="text-sm font-semibold text-secondary">Travel Date *</Label>
-                      <Input 
+                      <Input
                         id="travelDate"
                         type="date"
                         value={formData.travelDate}
-                        onChange={(e) => setFormData({...formData, travelDate: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, travelDate: e.target.value })}
                         required
                         className="text-foreground bg-background border-border h-12 rounded-xl"
                       />
@@ -496,13 +496,13 @@ const HomePage = () => {
 
                     <div className="space-y-3">
                       <Label htmlFor="guests" className="text-sm font-semibold text-secondary">Number of Guests *</Label>
-                      <Input 
+                      <Input
                         id="guests"
                         type="number"
                         min="1"
                         placeholder="How many travelers?"
                         value={formData.guests}
-                        onChange={(e) => setFormData({...formData, guests: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
                         required
                         className="text-foreground bg-background border-border h-12 rounded-xl placeholder:text-muted-foreground"
                       />
@@ -511,17 +511,17 @@ const HomePage = () => {
 
                   <div className="space-y-3">
                     <Label htmlFor="message" className="text-sm font-semibold text-secondary">Message</Label>
-                    <Textarea 
+                    <Textarea
                       id="message"
                       placeholder="Tell us about your ideal trip, interests, or any special requirements"
                       rows={5}
                       value={formData.message}
-                      onChange={(e) => setFormData({...formData, message: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="text-foreground bg-background border-border rounded-xl placeholder:text-muted-foreground resize-none p-4"
                     />
                   </div>
 
-                  <Button 
+                  <Button
                     type="submit"
                     className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-14 rounded-xl text-lg transition-all duration-200 active:scale-[0.98]"
                   >
@@ -550,7 +550,7 @@ const HomePage = () => {
                   Your ultimate guide to discovering the beauty, culture, and adventure of Sri Lanka. Let us help you plan the journey of a lifetime.
                 </p>
               </div>
-              
+
               <div>
                 <h4 className="text-lg font-semibold mb-6 text-primary-foreground font-serif">Quick Links</h4>
                 <ul className="space-y-4">
