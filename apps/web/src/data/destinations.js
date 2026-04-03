@@ -4,7 +4,7 @@ export const destinationsData = {
     name: 'Sigiriya',
     subtitle: 'Ancient Rock Fortress',
     description: 'Climb the iconic 200m Lion Rock, discover 5th-century frescoes, and explore the world-famous water gardens.',
-    image: 'https://cdn.kimkim.com/files/a/content_articles/featured_photos/5e1494499ab5ea489b88656adda282243e052869/medium-7905105820de0123d2684e4a908330ac.jpg',
+    image: 'https://images.unsplash.com/photo-1711797750174-c3750dd9d7c9?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     distance: '145km from Colombo',
     travelTime: '3-4 hours',
     overview: 'Sigiriya — meaning "Lion Rock" in Sinhala — is Sri Lanka\'s most iconic landmark and a UNESCO World Heritage Site. Built by King Kashyapa I in the 5th century AD, this ancient rock fortress rises 200 metres above the surrounding jungle. At its base lie beautifully landscaped water gardens, considered among the oldest landscaped gardens in the world. Halfway up, the famous Sigiriya frescoes depict celestial maidens in vivid colour. The summit reveals the remains of a royal palace with breathtaking 360° views across the jungle plains.',
