@@ -1,4 +1,6 @@
 
+import BlogPage from "./pages/BlogPage";
+import BlogPostPage from "./pages/BlogPostPage";
 import React from 'react';
 import { Route, Routes, HashRouter as Router } from 'react-router-dom';
 import { Toaster } from '@/components/ui/sonner';
@@ -11,8 +13,11 @@ function App() {
     <Router>
       <ScrollToTop />
       <Routes>
+	<Route path="/blog" element={<BlogPage />} />
+	<Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/destination/:destinationSlug" element={<DestinationDetailPage />} />
+
       </Routes>
       <Toaster />
     </Router>
