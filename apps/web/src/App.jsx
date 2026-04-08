@@ -14,7 +14,7 @@ function App() {
       <ScrollToTop />
       <Routes>
 	<Route path="/blog" element={<BlogPage />} />
-	<Route path="/blog/:slug" element={<BlogPostPage />} />
+	<Route path="/blog/:id" element={<BlogPostPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/destination/:destinationSlug" element={<DestinationDetailPage />} />
 
