@@ -146,12 +146,21 @@ export default function BlogPostPage() {
       </section>
 
       <article className="max-w-3xl mx-auto px-6 py-12">
-        <button
-          onClick={() => navigate("/blog")}
-          className="inline-flex items-center gap-2 text-emerald-600 font-semibold mb-8 hover:gap-3 transition-all"
-        >
-          <ArrowLeft size={16} /> Back to Blog
-        </button>
+        <div className="flex flex-wrap gap-4 mb-8">
+          <button
+            onClick={() => navigate("/")}
+            className="inline-flex items-center gap-2 text-gray-600 font-semibold hover:text-emerald-600 transition-all"
+          >
+            <ArrowLeft size={16} /> Home
+          </button>
+
+          <button
+            onClick={() => navigate("/blog")}
+            className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:gap-3 transition-all"
+          >
+            <ArrowLeft size={16} /> Back to Blog
+          </button>
+        </div>
 
         {post.content.map((block, i) => (
           <ContentBlock key={i} block={block} />

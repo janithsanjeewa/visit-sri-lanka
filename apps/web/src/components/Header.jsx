@@ -20,6 +20,7 @@ const Header = () => {
   }, []);
 
   const navLinks = [
+    { name: 'Home', href: '/', isPage: true },
     { name: 'Destinations', href: '#destinations' },
     { name: 'Experiences', href: '#experiences' },
     { name: 'Travel Guides', href: '#guides' },
@@ -64,9 +65,8 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-background/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -84,11 +84,10 @@ const Header = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className={`font-medium transition-colors duration-200 ${
-                    scrolled
-                      ? 'text-foreground/80 hover:text-primary'
-                      : 'text-white/90 hover:text-white drop-shadow-sm'
-                  }`}
+                  className={`font-medium transition-colors duration-200 ${scrolled
+                    ? 'text-foreground/80 hover:text-primary'
+                    : 'text-white/90 hover:text-white drop-shadow-sm'
+                    }`}
                 >
                   {link.name}
                 </Link>
@@ -96,11 +95,10 @@ const Header = () => {
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className={`font-medium transition-colors duration-200 ${
-                    scrolled
-                      ? 'text-foreground/80 hover:text-primary'
-                      : 'text-white/90 hover:text-white drop-shadow-sm'
-                  }`}
+                  className={`font-medium transition-colors duration-200 ${scrolled
+                    ? 'text-foreground/80 hover:text-primary'
+                    : 'text-white/90 hover:text-white drop-shadow-sm'
+                    }`}
                 >
                   {link.name}
                 </button>

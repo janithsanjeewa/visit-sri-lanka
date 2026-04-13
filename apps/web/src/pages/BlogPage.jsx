@@ -1,11 +1,21 @@
 // src/pages/BlogPage.jsx
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
-import { Clock, Tag, ArrowRight } from "lucide-react";
+import { Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import { blogPosts } from "../data/blogPosts";
 
-const categories = ["All", "Destinations", "Itineraries", "Travel Tips", "Hotels", "Experiences", "Adventures", "Food & Culture"];
+const categories = [
+  "All",
+  "Destinations",
+  "Itineraries",
+  "Travel Tips",
+  "Hotels",
+  "Experiences",
+  "Adventures",
+  "Food & Culture",
+];
 
 const categoryColors = {
   Destinations: "bg-emerald-100 text-emerald-700",
@@ -16,8 +26,6 @@ const categoryColors = {
   Adventures: "bg-orange-100 text-orange-700",
   "Food & Culture": "bg-yellow-100 text-yellow-700",
 };
-
-import { useState } from "react";
 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -41,8 +49,14 @@ export default function BlogPage() {
 
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-emerald-800 to-teal-900 text-white py-24 px-6 text-center overflow-hidden">
-        <div className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1588598198321-9735fd6a2b37?w=1400&q=60')", backgroundSize: "cover", backgroundPosition: "center" }}
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1588598198321-9735fd6a2b37?w=1400&q=60')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
         />
         <div className="relative z-10 max-w-3xl mx-auto">
           <motion.p
@@ -52,6 +66,7 @@ export default function BlogPage() {
           >
             Sri Lanka Travel Blog
           </motion.p>
+
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,14 +75,29 @@ export default function BlogPage() {
           >
             Stories, Guides & Tips for Your Sri Lanka Adventure
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-emerald-100 text-lg"
+            className="text-emerald-100 text-lg mb-6"
           >
             Honest advice and inspiring guides from the island of serendipity
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 bg-white text-emerald-700 font-semibold px-6 py-3 rounded-full hover:bg-emerald-50 transition"
+            >
+              <ArrowLeft size={16} />
+              Back to Home
+            </Link>
+          </motion.div>
         </div>
       </section>
 
@@ -78,11 +108,10 @@ export default function BlogPage() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
-                activeCategory === cat
+              className={`whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-medium transition-all ${activeCategory === cat
                   ? "bg-emerald-600 text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-              }`}
+                }`}
             >
               {cat}
             </button>
@@ -98,25 +127,36 @@ export default function BlogPage() {
             animate={{ opacity: 1, y: 0 }}
             className="mb-14"
           >
-            <Link to={`/blog/${featured.slug}`} className="group grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+            <Link
+              to={`/blog/${featured.slug}`}
+              className="group grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+            >
               <div className="relative overflow-hidden h-64 md:h-auto">
                 <img
                   src={featured.coverImage}
                   alt={featured.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <span className={`absolute top-4 left-4 text-xs font-semibold px-3 py-1 rounded-full ${categoryColors[featured.category] || "bg-gray-100 text-gray-700"}`}>
+                <span
+                  className={`absolute top-4 left-4 text-xs font-semibold px-3 py-1 rounded-full ${categoryColors[featured.category] || "bg-gray-100 text-gray-700"
+                    }`}
+                >
                   {featured.category}
                 </span>
               </div>
+
               <div className="bg-white p-8 flex flex-col justify-center">
-                <span className="text-xs text-gray-400 uppercase tracking-widest font-semibold mb-2">Featured Article</span>
+                <span className="text-xs text-gray-400 uppercase tracking-widest font-semibold mb-2">
+                  Featured Article
+                </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 group-hover:text-emerald-700 transition-colors leading-snug">
                   {featured.title}
                 </h2>
                 <p className="text-gray-500 mb-5 leading-relaxed">{featured.excerpt}</p>
                 <div className="flex items-center gap-4 text-sm text-gray-400 mb-6">
-                  <span className="flex items-center gap-1"><Clock size={14} /> {featured.readTime}</span>
+                  <span className="flex items-center gap-1">
+                    <Clock size={14} /> {featured.readTime}
+                  </span>
                   <span>{featured.date}</span>
                 </div>
                 <span className="inline-flex items-center gap-2 text-emerald-600 font-semibold group-hover:gap-3 transition-all">
@@ -136,24 +176,35 @@ export default function BlogPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.07 }}
             >
-              <Link to={`/blog/${post.slug}`} className="group block bg-white rounded-2xl overflow-hidden shadow hover:shadow-lg transition-shadow h-full">
+              <Link
+                to={`/blog/${post.slug}`}
+                className="group block bg-white rounded-2xl overflow-hidden shadow hover:shadow-lg transition-shadow h-full"
+              >
                 <div className="relative overflow-hidden h-48">
                   <img
                     src={post.coverImage}
                     alt={post.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className={`absolute top-3 left-3 text-xs font-semibold px-2.5 py-1 rounded-full ${categoryColors[post.category] || "bg-gray-100 text-gray-700"}`}>
+                  <span
+                    className={`absolute top-3 left-3 text-xs font-semibold px-2.5 py-1 rounded-full ${categoryColors[post.category] || "bg-gray-100 text-gray-700"
+                      }`}
+                  >
                     {post.category}
                   </span>
                 </div>
+
                 <div className="p-5">
                   <h3 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-emerald-700 transition-colors leading-snug">
                     {post.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
                   <div className="flex items-center justify-between text-xs text-gray-400">
-                    <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
+                    <span className="flex items-center gap-1">
+                      <Clock size={12} /> {post.readTime}
+                    </span>
                     <span>{post.date}</span>
                   </div>
                 </div>
