@@ -231,8 +231,29 @@ const DestinationDetailPage = () => {
   return (
     <>
       <Helmet>
-        <title>{`${destination.name} - Visit Sri Lanka`}</title>
+        <title>{`${destination.name} - ${destination.subtitle} | Visit Sri Lanka`}</title>
         <meta name="description" content={destination.description} />
+        <link rel="canonical" href={`https://visitsrilanka.site/destination/${destination.id}`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://visitsrilanka.site/destination/${destination.id}`} />
+        <meta property="og:title" content={`${destination.name} - ${destination.subtitle} | Visit Sri Lanka`} />
+        <meta property="og:description" content={destination.description} />
+        <meta property="og:image" content={destination.image} />
+        <meta property="og:site_name" content="Visit Sri Lanka" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${destination.name} - ${destination.subtitle} | Visit Sri Lanka`} />
+        <meta name="twitter:description" content={destination.description} />
+        <meta name="twitter:image" content={destination.image} />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "TouristAttraction",
+          "name": destination.name,
+          "description": destination.overview,
+          "url": `https://visitsrilanka.site/destination/${destination.id}`,
+          "image": destination.image,
+          "address": { "@type": "PostalAddress", "addressCountry": "LK" },
+          "containedInPlace": { "@type": "Country", "name": "Sri Lanka" }
+        })}</script>
       </Helmet>
 
       <Header />

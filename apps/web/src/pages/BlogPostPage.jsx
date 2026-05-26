@@ -112,6 +112,30 @@ export default function BlogPostPage() {
       <Helmet>
         <title>{post.title} | Visit Sri Lanka Blog</title>
         <meta name="description" content={post.excerpt} />
+        <link rel="canonical" href={`https://visitsrilanka.site/blog/${post.slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://visitsrilanka.site/blog/${post.slug}`} />
+        <meta property="og:title" content={`${post.title} | Visit Sri Lanka Blog`} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.coverImage} />
+        <meta property="og:site_name" content="Visit Sri Lanka" />
+        <meta property="article:published_time" content={post.date} />
+        <meta property="article:author" content={post.author} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${post.title} | Visit Sri Lanka Blog`} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={post.coverImage} />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": post.title,
+          "description": post.excerpt,
+          "image": post.coverImage,
+          "datePublished": post.date,
+          "author": { "@type": "Person", "name": post.author },
+          "publisher": { "@type": "Organization", "name": "Visit Sri Lanka", "url": "https://visitsrilanka.site/" },
+          "mainEntityOfPage": { "@type": "WebPage", "@id": `https://visitsrilanka.site/blog/${post.slug}` }
+        })}</script>
       </Helmet>
 
       <section className="relative h-[50vh] min-h-[340px] overflow-hidden">

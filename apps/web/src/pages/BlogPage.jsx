@@ -40,11 +40,27 @@ export default function BlogPage() {
   return (
     <>
       <Helmet>
-        <title>Sri Lanka Travel Blog — Tips, Guides & Inspiration | Visit Sri Lanka</title>
-        <meta
-          name="description"
-          content="Discover travel guides, itineraries, hotel recommendations, and insider tips for visiting Sri Lanka. Your ultimate resource for planning the perfect Sri Lanka trip."
-        />
+        <title>Sri Lanka Travel Blog — Tips, Guides &amp; Inspiration | Visit Sri Lanka</title>
+        <meta name="description" content="Discover travel guides, itineraries, hotel recommendations, and insider tips for visiting Sri Lanka. Your ultimate resource for planning the perfect Sri Lanka trip." />
+        <link rel="canonical" href="https://visitsrilanka.site/blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://visitsrilanka.site/blog" />
+        <meta property="og:title" content="Sri Lanka Travel Blog — Tips, Guides & Inspiration | Visit Sri Lanka" />
+        <meta property="og:description" content="Discover travel guides, itineraries, hotel recommendations, and insider tips for visiting Sri Lanka." />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1588598198321-9735fd6a2b37?w=1200&q=80" />
+        <meta property="og:site_name" content="Visit Sri Lanka" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sri Lanka Travel Blog — Tips, Guides & Inspiration | Visit Sri Lanka" />
+        <meta name="twitter:description" content="Discover travel guides, itineraries, hotel recommendations, and insider tips for visiting Sri Lanka." />
+        <meta name="twitter:image" content="https://images.unsplash.com/photo-1588598198321-9735fd6a2b37?w=1200&q=80" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": "Visit Sri Lanka Travel Blog",
+          "description": "Travel guides, itineraries, tips, and inspiration for visiting Sri Lanka.",
+          "url": "https://visitsrilanka.site/blog",
+          "publisher": { "@type": "Organization", "name": "Visit Sri Lanka", "url": "https://visitsrilanka.site/" }
+        })}</script>
       </Helmet>
 
       {/* Hero */}

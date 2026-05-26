@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { MapPin, Calendar, Users, ArrowRight, BookOpen } from 'lucide-react';
+import { MapPin, Calendar, ArrowRight, BookOpen } from 'lucide-react';
 import { toast } from 'sonner';
 import Header from '@/components/Header.jsx';
 import DestinationCard from '@/components/DestinationCard.jsx';
@@ -138,8 +138,60 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Visit Sri Lanka - Discover Ancient Temples, Tea Hills & Golden Beaches</title>
+        <title>Visit Sri Lanka - Discover Ancient Temples, Tea Hills &amp; Golden Beaches</title>
         <meta name="description" content="Explore Sri Lanka's UNESCO heritage sites, pristine beaches, lush tea plantations, and vibrant culture. Plan your perfect island adventure today." />
+        <link rel="canonical" href="https://visitsrilanka.site/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://visitsrilanka.site/" />
+        <meta property="og:title" content="Visit Sri Lanka - Discover Ancient Temples, Tea Hills & Golden Beaches" />
+        <meta property="og:description" content="Explore Sri Lanka's UNESCO heritage sites, pristine beaches, lush tea plantations, and vibrant culture. Plan your perfect island adventure today." />
+        <meta property="og:image" content="https://horizons-cdn.hostinger.com/3f324f6a-a0b1-471d-a91a-725e994c042b/38da79ef7d4384e7fc63e5e62762c858.jpg" />
+        <meta property="og:image:alt" content="Aerial view of Sri Lanka's pristine beach with turquoise waters" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="Visit Sri Lanka" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Visit Sri Lanka - Discover Ancient Temples, Tea Hills & Golden Beaches" />
+        <meta name="twitter:description" content="Explore Sri Lanka's UNESCO heritage sites, pristine beaches, lush tea plantations, and vibrant culture." />
+        <meta name="twitter:image" content="https://horizons-cdn.hostinger.com/3f324f6a-a0b1-471d-a91a-725e994c042b/38da79ef7d4384e7fc63e5e62762c858.jpg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "https://visitsrilanka.site/#website",
+              "url": "https://visitsrilanka.site/",
+              "name": "Visit Sri Lanka",
+              "description": "Your ultimate guide to travelling Sri Lanka",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://visitsrilanka.site/blog?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            },
+            {
+              "@type": "Organization",
+              "@id": "https://visitsrilanka.site/#organization",
+              "name": "Visit Sri Lanka",
+              "url": "https://visitsrilanka.site/",
+              "logo": "https://visitsrilanka.site/logo.png"
+            },
+            {
+              "@type": "TouristDestination",
+              "name": "Sri Lanka",
+              "description": "Island nation in South Asia renowned for UNESCO heritage sites, wildlife, tea hills, and beaches.",
+              "url": "https://visitsrilanka.site/",
+              "touristType": ["Cultural tourism", "Adventure tourism", "Beach tourism", "Wildlife tourism"],
+              "includesAttraction": [
+                { "@type": "TouristAttraction", "name": "Sigiriya", "url": "https://visitsrilanka.site/destination/sigiriya" },
+                { "@type": "TouristAttraction", "name": "Kandy", "url": "https://visitsrilanka.site/destination/kandy" },
+                { "@type": "TouristAttraction", "name": "Galle Fort", "url": "https://visitsrilanka.site/destination/galle-fort" },
+                { "@type": "TouristAttraction", "name": "Ella", "url": "https://visitsrilanka.site/destination/ella" },
+                { "@type": "TouristAttraction", "name": "Mirissa Beach", "url": "https://visitsrilanka.site/destination/mirissa-beach" },
+                { "@type": "TouristAttraction", "name": "Trincomalee", "url": "https://visitsrilanka.site/destination/trincomalee" }
+              ]
+            }
+          ]
+        })}</script>
       </Helmet>
 
       <Header />
